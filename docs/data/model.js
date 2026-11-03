@@ -1,0 +1,678 @@
+window.MODEL = {
+ "station": "Bombay/Santacruz (GHCN-Daily IN012070800)",
+ "years_used": [
+  1950,
+  1951,
+  1952,
+  1953,
+  1954,
+  1955,
+  1956,
+  1957,
+  1958,
+  1959,
+  1960,
+  1961,
+  1962,
+  1963,
+  1964,
+  1965,
+  1966,
+  1967,
+  1968,
+  1969,
+  1970,
+  1974,
+  1978,
+  1979,
+  1980,
+  1981,
+  1982,
+  1984,
+  1985,
+  1986,
+  1987,
+  1988,
+  1989,
+  1990,
+  1991,
+  1992,
+  1993,
+  1994,
+  1995,
+  1996,
+  1997,
+  1998,
+  1999,
+  2001,
+  2002,
+  2003,
+  2004,
+  2005,
+  2006,
+  2007,
+  2008,
+  2010,
+  2011,
+  2012,
+  2013,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2023,
+  2024
+ ],
+ "annual": [
+  {
+   "year": 1950,
+   "max_mm": 154.9,
+   "date": "1950-07-08",
+   "total_mm": 1797.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1951,
+   "max_mm": 129.5,
+   "date": "1951-07-25",
+   "total_mm": 1671.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 1952,
+   "max_mm": 308.6,
+   "date": "1952-07-17",
+   "total_mm": 2338.0,
+   "very_heavy_days": 8
+  },
+  {
+   "year": 1953,
+   "max_mm": 310.6,
+   "date": "1953-07-28",
+   "total_mm": 2590.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1954,
+   "max_mm": 256.0,
+   "date": "1954-08-07",
+   "total_mm": 3445.0,
+   "very_heavy_days": 6
+  },
+  {
+   "year": 1955,
+   "max_mm": 183.4,
+   "date": "1955-08-24",
+   "total_mm": 2238.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1956,
+   "max_mm": 175.8,
+   "date": "1956-06-30",
+   "total_mm": 2766.0,
+   "very_heavy_days": 7
+  },
+  {
+   "year": 1957,
+   "max_mm": 161.5,
+   "date": "1957-07-14",
+   "total_mm": 2309.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1958,
+   "max_mm": 241.2,
+   "date": "1958-07-11",
+   "total_mm": 3760.0,
+   "very_heavy_days": 9
+  },
+  {
+   "year": 1959,
+   "max_mm": 176.0,
+   "date": "1959-08-24",
+   "total_mm": 2561.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1960,
+   "max_mm": 121.2,
+   "date": "1960-06-26",
+   "total_mm": 1984.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 1961,
+   "max_mm": 157.8,
+   "date": "1961-07-25",
+   "total_mm": 2501.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1962,
+   "max_mm": 212.4,
+   "date": "1962-09-10",
+   "total_mm": 2117.0,
+   "very_heavy_days": 5
+  },
+  {
+   "year": 1963,
+   "max_mm": 192.6,
+   "date": "1963-07-07",
+   "total_mm": 2594.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1964,
+   "max_mm": 137.8,
+   "date": "1964-08-12",
+   "total_mm": 2045.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 1965,
+   "max_mm": 372.9,
+   "date": "1965-07-16",
+   "total_mm": 2569.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1966,
+   "max_mm": 291.3,
+   "date": "1966-07-19",
+   "total_mm": 1614.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1967,
+   "max_mm": 201.1,
+   "date": "1967-07-29",
+   "total_mm": 2147.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1968,
+   "max_mm": 173.8,
+   "date": "1968-07-31",
+   "total_mm": 1405.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 1969,
+   "max_mm": 201.4,
+   "date": "1969-07-03",
+   "total_mm": 2096.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1970,
+   "max_mm": 194.0,
+   "date": "1970-06-16",
+   "total_mm": 2390.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1974,
+   "max_mm": 380.0,
+   "date": "1974-07-05",
+   "total_mm": 1578.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 1978,
+   "max_mm": 160.0,
+   "date": "1978-06-19",
+   "total_mm": 1397.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 1979,
+   "max_mm": 140.0,
+   "date": "1979-06-24",
+   "total_mm": 1547.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1980,
+   "max_mm": 150.1,
+   "date": "1980-08-22",
+   "total_mm": 1713.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1981,
+   "max_mm": 340.1,
+   "date": "1981-06-22",
+   "total_mm": 2496.0,
+   "very_heavy_days": 6
+  },
+  {
+   "year": 1982,
+   "max_mm": 151.9,
+   "date": "1982-06-19",
+   "total_mm": 1706.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1984,
+   "max_mm": 240.0,
+   "date": "1984-07-02",
+   "total_mm": 1936.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1985,
+   "max_mm": 394.0,
+   "date": "1985-05-31",
+   "total_mm": 2436.0,
+   "very_heavy_days": 9
+  },
+  {
+   "year": 1986,
+   "max_mm": 195.1,
+   "date": "1986-08-08",
+   "total_mm": 1208.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1987,
+   "max_mm": 126.0,
+   "date": "1987-07-07",
+   "total_mm": 1952.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1988,
+   "max_mm": 145.0,
+   "date": "1988-09-29",
+   "total_mm": 2445.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1989,
+   "max_mm": 192.0,
+   "date": "1989-07-25",
+   "total_mm": 2064.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1990,
+   "max_mm": 150.1,
+   "date": "1990-06-16",
+   "total_mm": 2497.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1991,
+   "max_mm": 399.0,
+   "date": "1991-06-10",
+   "total_mm": 2214.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1992,
+   "max_mm": 215.4,
+   "date": "1992-08-12",
+   "total_mm": 1940.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1993,
+   "max_mm": 312.4,
+   "date": "1993-09-23",
+   "total_mm": 2396.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 1994,
+   "max_mm": 157.2,
+   "date": "1994-07-13",
+   "total_mm": 2440.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1995,
+   "max_mm": 180.1,
+   "date": "1995-08-01",
+   "total_mm": 1739.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1996,
+   "max_mm": 171.7,
+   "date": "1996-07-22",
+   "total_mm": 1924.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 1997,
+   "max_mm": 121.9,
+   "date": "1997-07-06",
+   "total_mm": 1707.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 1998,
+   "max_mm": 211.1,
+   "date": "1998-08-10",
+   "total_mm": 2138.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 1999,
+   "max_mm": 134.1,
+   "date": "1999-06-17",
+   "total_mm": 1574.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 2001,
+   "max_mm": 161.0,
+   "date": "2001-07-09",
+   "total_mm": 2014.0,
+   "very_heavy_days": 5
+  },
+  {
+   "year": 2002,
+   "max_mm": 185.9,
+   "date": "2002-08-07",
+   "total_mm": 1489.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 2003,
+   "max_mm": 193.0,
+   "date": "2003-07-15",
+   "total_mm": 2325.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 2004,
+   "max_mm": 130.0,
+   "date": "2004-08-02",
+   "total_mm": 2232.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 2005,
+   "max_mm": 944.0,
+   "date": "2005-07-27",
+   "total_mm": 3530.0,
+   "very_heavy_days": 5
+  },
+  {
+   "year": 2006,
+   "max_mm": 230.9,
+   "date": "2006-07-05",
+   "total_mm": 3015.0,
+   "very_heavy_days": 7
+  },
+  {
+   "year": 2007,
+   "max_mm": 257.0,
+   "date": "2007-07-01",
+   "total_mm": 2590.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 2008,
+   "max_mm": 162.1,
+   "date": "2008-06-07",
+   "total_mm": 3083.0,
+   "very_heavy_days": 7
+  },
+  {
+   "year": 2010,
+   "max_mm": 158.0,
+   "date": "2010-08-17",
+   "total_mm": 3506.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 2011,
+   "max_mm": 220.0,
+   "date": "2011-08-28",
+   "total_mm": 2811.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 2012,
+   "max_mm": 184.9,
+   "date": "2012-09-04",
+   "total_mm": 2086.0,
+   "very_heavy_days": 1
+  },
+  {
+   "year": 2013,
+   "max_mm": 215.9,
+   "date": "2013-07-24",
+   "total_mm": 2469.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 2016,
+   "max_mm": 143.0,
+   "date": "2016-09-21",
+   "total_mm": 3340.0,
+   "very_heavy_days": 2
+  },
+  {
+   "year": 2017,
+   "max_mm": 331.0,
+   "date": "2017-08-30",
+   "total_mm": 3171.0,
+   "very_heavy_days": 4
+  },
+  {
+   "year": 2018,
+   "max_mm": 230.9,
+   "date": "2018-06-25",
+   "total_mm": 2273.0,
+   "very_heavy_days": 6
+  },
+  {
+   "year": 2019,
+   "max_mm": 374.9,
+   "date": "2019-07-02",
+   "total_mm": 3845.0,
+   "very_heavy_days": 9
+  },
+  {
+   "year": 2020,
+   "max_mm": 286.0,
+   "date": "2020-09-23",
+   "total_mm": 3416.0,
+   "very_heavy_days": 6
+  },
+  {
+   "year": 2021,
+   "max_mm": 253.0,
+   "date": "2021-07-16",
+   "total_mm": 3019.0,
+   "very_heavy_days": 3
+  },
+  {
+   "year": 2023,
+   "max_mm": 204.0,
+   "date": "2023-07-22",
+   "total_mm": 3426.0,
+   "very_heavy_days": 6
+  },
+  {
+   "year": 2024,
+   "max_mm": 268.0,
+   "date": "2024-07-08",
+   "total_mm": 3560.0,
+   "very_heavy_days": 6
+  }
+ ],
+ "fits_all": {
+  "Normal": {
+   "type": "normal",
+   "mean": 224.67460317460316,
+   "sd": 117.18610618151533
+  },
+  "Gamma": {
+   "type": "gamma",
+   "shape": 6.212328902819684,
+   "scale": 36.16592210251886
+  },
+  "Gumbel": {
+   "type": "gumbel",
+   "loc": 184.05560356139804,
+   "scale": 60.606914763725996
+  },
+  "GEV": {
+   "type": "gev",
+   "xi": 0.3733361820595156,
+   "loc": 172.872408349044,
+   "scale": 47.33950817056933
+  }
+ },
+ "fits_pre2005": {
+  "Normal": {
+   "type": "normal",
+   "mean": 206.18936170212768,
+   "sd": 76.22587999127094
+  },
+  "Gamma": {
+   "type": "gamma",
+   "shape": 8.712471811165221,
+   "scale": 23.666000438347652
+  },
+  "Gumbel": {
+   "type": "gumbel",
+   "loc": 173.44637905527688,
+   "scale": 50.41905951225051
+  },
+  "GEV": {
+   "type": "gev",
+   "xi": 0.3586207122134286,
+   "loc": 164.78864206569247,
+   "scale": 41.107008932964185
+  }
+ },
+ "gof_pre2005": [
+  {
+   "model": "Normal",
+   "chi2": 15.4255,
+   "df": 3,
+   "critical": 7.8147,
+   "p_chi2": 0.0015,
+   "p_KS": 0.0317,
+   "AIC": 544.7481,
+   "verdict": "rejected",
+   "return period of 944 mm (yr)": 5.414846821766395e+21
+  },
+  {
+   "model": "Gamma",
+   "chi2": 7.766,
+   "df": 3,
+   "critical": 7.8147,
+   "p_chi2": 0.0511,
+   "p_KS": 0.1463,
+   "AIC": 532.8424,
+   "verdict": "fits",
+   "return period of 944 mm (yr)": 1686087487.4123
+  },
+  {
+   "model": "Gumbel",
+   "chi2": 4.4468,
+   "df": 3,
+   "critical": 7.8147,
+   "p_chi2": 0.2171,
+   "p_KS": 0.495,
+   "AIC": 527.5599,
+   "verdict": "fits",
+   "return period of 944 mm (yr)": 4338255.8504
+  },
+  {
+   "model": "GEV",
+   "chi2": 0.8723,
+   "df": 2,
+   "critical": 5.9915,
+   "p_chi2": 0.6465,
+   "p_KS": 0.9459,
+   "AIC": 522.7741,
+   "verdict": "fits",
+   "return period of 944 mm (yr)": 307.5758
+  }
+ ],
+ "gof_all": [
+  {
+   "model": "Normal",
+   "chi2": 32.1111,
+   "df": 5,
+   "critical": 11.0705,
+   "p_chi2": 0.0,
+   "p_KS": 0.0195,
+   "AIC": 783.0204,
+   "verdict": "rejected"
+  },
+  {
+   "model": "Gamma",
+   "chi2": 13.5714,
+   "df": 5,
+   "critical": 11.0705,
+   "p_chi2": 0.0186,
+   "p_KS": 0.1746,
+   "AIC": 742.9229,
+   "verdict": "rejected"
+  },
+  {
+   "model": "Gumbel",
+   "chi2": 10.5238,
+   "df": 5,
+   "critical": 11.0705,
+   "p_chi2": 0.0617,
+   "p_KS": 0.4585,
+   "AIC": 731.6012,
+   "verdict": "fits"
+  },
+  {
+   "model": "GEV",
+   "chi2": 2.1429,
+   "df": 4,
+   "critical": 9.4877,
+   "p_chi2": 0.7095,
+   "p_KS": 0.9922,
+   "AIC": 717.4889,
+   "verdict": "fits"
+  }
+ ],
+ "gev_all_rl100_ci": [
+  452.8992408494167,
+  1311.903924715342
+ ],
+ "gev_pre_T944_ci": [
+  65.38238114910826,
+  12299.066942824531
+ ],
+ "poisson": {
+  "lambda_very_heavy": 3.619047619047619,
+  "lambda_extreme": 0.746031746031746,
+  "observed": [
+   0,
+   9,
+   13,
+   14,
+   11,
+   3,
+   13
+  ],
+  "labels": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6+"
+  ]
+ },
+ "monsoon_trend_per_decade": 101.18603991878493,
+ "monsoon_trend_p": 0.005040714223476839,
+ "maxima_trend_p": 0.2916852118498752
+};

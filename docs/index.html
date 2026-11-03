@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mumbai Flood Odds</title>
+<meta name="description" content="How likely is a Mumbai flood-day? An interactive extreme-rainfall calculator built on 63 monsoons of Santacruz gauge data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="rain" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Probability &amp; Statistics · Lab project</p>
+    <h1>Can probability<br>predict a flood?</h1>
+    <p class="lede">Mumbai, 26 July 2005: <strong class="accent">944 mm</strong> of rain in 24 hours at Santacruz. We fitted four models to the 47 years before it. Here is what each would have said.</p>
+    <div class="verdicts" id="verdicts"></div>
+    <p class="hero-note">Return period of a 944 mm day under each model fitted on 1950–2004 data.</p>
+  </div>
+</header>
+
+<main>
+  <section class="wrap" id="calculator">
+    <div class="section-head">
+      <p class="eyebrow dark">The tool</p>
+      <h2>Flood-odds calculator</h2>
+      <p class="sub">Pick a one-day rainfall and a time horizon. The calculator uses the fitted distribution to give the yearly chance, the return period and the odds over your horizon.</p>
+    </div>
+
+    <div class="calc">
+      <div class="controls card">
+        <label class="field">
+          <span class="label">One-day rainfall <output id="mmOut">400 mm</output></span>
+          <input type="range" id="mm" min="120" max="1200" step="5" value="400">
+        </label>
+        <div class="presets" id="presets">
+          <button data-mm="331" type="button">2017 · 331 mm</button>
+          <button data-mm="375" type="button">2019 · 375 mm</button>
+          <button data-mm="944" type="button">2005 · 944 mm</button>
+        </div>
+        <label class="field">
+          <span class="label">Time horizon <output id="yrsOut">30 years</output></span>
+          <input type="range" id="yrs" min="1" max="100" step="1" value="30">
+        </label>
+        <div class="field">
+          <span class="label">Model</span>
+          <div class="seg" id="modelSeg" role="radiogroup">
+            <button data-v="GEV" class="on" type="button">GEV</button>
+            <button data-v="Gumbel" type="button">Gumbel</button>
+            <button data-v="Gamma" type="button">Gamma</button>
+            <button data-v="Normal" type="button">Normal</button>
+          </div>
+        </div>
+        <div class="field">
+          <span class="label">Fitted on</span>
+          <div class="seg" id="fitSeg" role="radiogroup">
+            <button data-v="all" class="on" type="button">1950–2024</button>
+            <button data-v="pre" type="button">1950–2004 only</button>
+          </div>
+        </div>
+        <p class="hint" id="modelHint"></p>
+      </div>
+
+      <div class="results">
+        <div class="stat card"><span class="k">Chance in any one year</span><span class="v" id="pYear"></span></div>
+        <div class="stat card"><span class="k">Return period</span><span class="v" id="tYear"></span></div>
+        <div class="stat card big"><span class="k" id="pHorizonK"></span><span class="v" id="pHorizon"></span><div class="meter"><i id="meter"></i></div></div>
+        <div class="stat card"><span class="k" id="expK"></span><span class="v" id="expV"></span></div>
+        <div class="stat card"><span class="k">Years at or above this, 1950–2024</span><span class="v" id="obsV"></span></div>
+      </div>
+    </div>
+
+    <div class="card chart-card">
+      <div class="chart-head">
+        <h3 id="tsTitle">Largest one-day rainfall each year</h3>
+        <p class="sub small">Santacruz, 63 complete monsoons. Bars at or above your threshold are highlighted.</p>
+      </div>
+      <div id="tsChart" class="chart"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow dark">Why the model matters</p>
+        <h2>Same data, different tails</h2>
+        <p class="sub">All four models agree on ordinary years and disagree completely on rare ones. Only the Generalised Extreme Value (GEV) distribution, the model extreme-value theory prescribes for annual maxima, leaves room for 944 mm.</p>
+      </div>
+      <div class="card chart-card">
+        <div class="legend" id="rlLegend"></div>
+        <div id="rlChart" class="chart"></div>
+      </div>
+      <div class="grid3">
+        <div class="card fact"><span class="n">0.36</span><span>GEV shape ξ before 2005. Positive in all 1,000 bootstrap resamples, so the heavy tail is real.</span></div>
+        <div class="card fact"><span class="n">65 – 12,299</span><span>95% bootstrap range for the 944 mm return period, in years. Wide, but nowhere near "impossible".</span></div>
+        <div class="card fact"><span class="n">p = 0.65</span><span>Chi-square goodness of fit for GEV. Normal is rejected (p = 0.001) and Gamma only just passes (p = 0.051).</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head">
+      <p class="eyebrow dark">Counting storms</p>
+      <h2>Very heavy rain days follow a Poisson law</h2>
+      <p class="sub">The number of days with at least 115.6 mm (IMD's "very heavy" category) per monsoon behaves like Poisson(λ = <span id="lamText"></span>). Chi-square goodness of fit p = 0.26.</p>
+    </div>
+    <div class="calc two">
+      <div class="card chart-card"><div id="poisChart" class="chart"></div></div>
+      <div class="controls card">
+        <label class="field">
+          <span class="label">At least <output id="kOut">5</output> very heavy days in a monsoon</span>
+          <input type="range" id="k" min="0" max="10" step="1" value="5">
+        </label>
+        <div class="stat inline"><span class="k">Poisson probability</span><span class="v" id="pK"></span></div>
+        <div class="stat inline"><span class="k">Observed share of monsoons</span><span class="v" id="oK"></span></div>
+        <p class="hint">Variance/mean = 1.26: a little more clustering than pure Poisson, so the model slightly under-predicts very wet seasons.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow dark">What the tests say</p>
+        <h2>Findings</h2>
+      </div>
+      <div class="findings">
+        <div class="card"><h3>Distributions</h3><p>GEV fits annual maxima best (AIC 522.8 vs 532.8 for Gamma). Detrended monsoon totals are Normal (Shapiro p = 0.57). Heavy-day counts are Poisson.</p></div>
+        <div class="card"><h3>Hypothesis tests</h3><p>Monsoons in 2010–24 averaged 3,077 mm, well above every earlier era (ANOVA F = 10.4, p &lt; 0.001). The mean annual maximum did not change significantly (Welch t, p = 0.48).</p></div>
+        <div class="card"><h3>Regression</h3><p>Monsoon totals rise by about 101 mm per decade (p = 0.005; p = 0.054 after correcting for autocorrelation). Holding the season total fixed, each extra wet day lowers the worst day by 2.8 mm.</p></div>
+        <div class="card"><h3>Validation</h3><p>Trained on 1950–1990 and tested on 1991–2024, GEV exceedances stayed within expectation (4 vs 2.9 at the 10-year level, p = 0.33). The Poisson count was 111 vs 100 predicted.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap method">
+    <div class="section-head">
+      <p class="eyebrow dark">Method</p>
+      <h2>How it was built</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Clean.</b> NOAA GHCN-Daily, station IN012070800. Years kept only with ≥ 85% of monsoon days recorded (63 of 76). The 2005 storm, stored by GHCN as 461 mm on the wrong date, was corrected to IMD's 944 mm.</li>
+      <li><b>Describe.</b> Mean, median, mode, variance, skewness, histograms and box plots.</li>
+      <li><b>Fit.</b> Normal, Gamma, Gumbel and GEV by maximum likelihood; chi-square and KS goodness of fit; 1,000-sample bootstrap for tail uncertainty.</li>
+      <li><b>Test.</b> F, Welch t, Mann–Whitney, ANOVA with Tukey HSD, Poisson z-test, chi-square independence.</li>
+      <li><b>Model.</b> Simple and multiple linear regression, with residual, autocorrelation and multicollinearity checks.</li>
+      <li><b>Validate.</b> Out-of-sample test on 1991–2024 using models trained on 1950–1990.</li>
+    </ol>
+    <p class="caveat">This calculator estimates the chance of rainfall at one gauge, not whether a street floods. Flooding also depends on rainfall intensity within the day, tides, drainage and land use. Probabilities assume independent years with constant risk.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Vani Singh · Linga Chaitra · Probability and Statistics lab project</p>
+    <p class="small">Data: NOAA GHCN-Daily IN012070800 (Bombay/Santacruz), 1949–2025; 2005 value from IMD. Full analysis in <code>analysis/flood_analysis.ipynb</code>.</p>
+  </div>
+</footer>
+
+<script src="data/model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
